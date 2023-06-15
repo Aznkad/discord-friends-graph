@@ -1,5 +1,6 @@
 import discord
 from unidecode import unidecode
+import argparse
 
 client = discord.Client()
 
@@ -28,8 +29,9 @@ def normalize(s):
 
 @client.event
 async def on_ready():
+    global filename
     friends_graph = dict()
-    filename = "friends.txt"
+    
 
     print(f'We have logged in as {client.user}')
 
@@ -55,4 +57,17 @@ async def on_ready():
     graph_from_dict(friends_graph)
 
 
-client.run('token')
+if __name__ == "__main__":
+    # argparse the user token
+    parser = argparse.ArgumentParser(description='Get the friends graph of a discord user.')
+    parser.add_argument('token', metavar='token', type=str, help='The discord user token')
+    parser.add_argument('--output', metavar='output', type=str, help='The output file name', default="friends.txt")
+
+    args = parser.parse_args()
+    if args.output:
+        filename = args.output
+    else:
+        filename = "friends.txt"
+    client.run(args.token)
+
+

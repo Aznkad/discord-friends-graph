@@ -7,6 +7,23 @@ This script is based on the [`discord.py-self`](https://github.com/dolfies/disco
 
 ## How to use
 
+### Setup
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+To generate the graph :
+```bash
+python friends_graph.py *token*
+```
+or
+```bash
+python friends_graph.py *token* --output *output_file*
+```
+
 ### Dependencies
 This script requires you to be able to run `python 3.8` or higher, and that you have installed two libraries on your computer :
 - `discord.py-self`: The installation details can be found on the [github page](https://github.com/dolfies/discord.py-self). If you're already using `discord.py` you might need to install this library in a virtual environment in order for those not to conflict, but again, all details are given in the github page.
