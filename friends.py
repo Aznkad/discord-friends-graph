@@ -23,7 +23,7 @@ def normalize(s):
     special_chars = "&~#{}()[]-'\"@^$£€<>*+=|_,;:!?./%"
     s = unidecode(s) # Remove accents, emojis...
     for c in special_chars:
-        s.replace(c, '')
+        s = s.replace(c, '')
     return s
 
 
