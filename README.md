@@ -17,7 +17,7 @@ This can be achieved by executing the following lines.
 
 ```bash
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate # or .\venv\Scripts\activate for Windows
 pip install -r requirements.txt
 ```
 
