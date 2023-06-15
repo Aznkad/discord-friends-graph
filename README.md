@@ -1,7 +1,7 @@
 # discord-friends-graph
 This is a script for a discord self-bot intended to create your discord friends graph, i.e. the set of your discord friends linked together if they are also friends !
 
-This script is based on the [https://github.com/dolfies/discord.py-self](`discord.py-self`) library. Thanks dolfies!
+This script is based on the [`discord.py-self`](https://github.com/dolfies/discord.py-self) library. Thanks dolfies!
 
 **Warning!** Running this script on your computer will automate your discord account, thus being an act of self-botting which is forbidden by discord's ToS and your account may get banned. Use this at your own risk!
 
