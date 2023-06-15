@@ -23,6 +23,8 @@ Executing the code will produce two documents : `graph.dot` and `friends.txt`.
 - `graph.dot` is the `dot` file of your friends graph. You can render it using the [dot](https://linux.die.net/man/1/dot) or [neato](https://linux.die.net/man/1/neato) command on linux, or using [`graphviz`](https://graphviz.org/).
 - `friends.txt` is a text file containing the text description of the graph with a neighborhood representation, in case you would want to do things with it without executing the script a second time.
 
+**Warning!** Those files will overwrite any other file named `graph.dot` and `friends.txt`. Change the names of your files if you don't want to lose your data.
+
 ### Doing without `unidecode`
 You can get rid of the `unidecode` library by removing the import line, the `normalize` function, and any occurrence of it in the script.
 
@@ -31,3 +33,5 @@ You can get rid of the `unidecode` library by removing the import line, the `nor
 Some errors can happen during the execution of the script or when rendering the graph. Here are some I have noticed:
 - If you don't want to use `unidecode`, the graph may not render properly because of weird discord names, or worse the parsing of their names can make the script crash. To solve the first issue, you can remove by hand the issuing special characters.
 - In may/june 2023, discord changed the format of names and every username should be unique. However at the moment the change has not been totally made and some accounts still have the same username, causing them to be fused in the graph. I didn't do anything against it in the script because of the change, and if you are facing this problem you can solve it by hand.
+
+Don't hesitate to contact me if you find any new error!
