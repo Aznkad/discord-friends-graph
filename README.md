@@ -9,18 +9,18 @@ This script is based on the [`discord.py-self`](https://github.com/dolfies/disco
 
 ### Dependencies
 This script requires you to be able to run `python 3.8` or higher, and that you have installed two libraries on your computer :
-- `discord.py-self`: The installation details can be found on the [https://github.com/dolfies/discord.py-self](github page). If you're already using `discord.py` you might need to install this library in a virtual environment in order for those not to conflict, but again, all details are given in the github page.
+- `discord.py-self`: The installation details can be found on the [github page](https://github.com/dolfies/discord.py-self). If you're already using `discord.py` you might need to install this library in a virtual environment in order for those not to conflict, but again, all details are given in the github page.
 - `unidecode`: This is used to normalize discord accounts name, which may contain accents, emojis, and special characters. Those may compromise the rendering of the graph at the end. If you want however you can do without by changing a few lines (see ...)
 
 ### Launching the script
-Once those libraries are installed, you need to find your discord user token. On June 15th, 2023 [https://www.androidauthority.com/get-discord-token-3149920/](this tutorial) works quite well.
+Once those libraries are installed, you need to find your discord user token. On June 15th, 2023 [this tutorial](https://www.androidauthority.com/get-discord-token-3149920/) works quite well.
 **Warning!** Do not share this token with *anyone*, since this would allow them to have entire control of your discord account. Once you found it, you can replace `token` at the end of the script by your discord token.
 
 Finally, you're ready to launch the script! Run it as any normal python script. It should print a line each time it is treating a new friend and warn you when it is done. Don't worry if discord's API limits your number of querries.
 
 ### Rendering the graph
 Executing the code will produce two documents : `graph.dot` and `friends.txt`. 
-- `graph.dot` is the `dot` file of your friends graph. You can render it using the [https://linux.die.net/man/1/dot](`dot`) or [https://linux.die.net/man/1/neato](`neato`) command on linux, or using [https://graphviz.org/](`graphviz`).
+- `graph.dot` is the `dot` file of your friends graph. You can render it using the [dot](https://linux.die.net/man/1/dot) or [neato](https://linux.die.net/man/1/neato) command on linux, or using [`graphviz`](https://graphviz.org/).
 - `friends.txt` is a text file containing the text description of the graph with a neighborhood representation, in case you would want to do things with it without executing the script a second time.
 
 ### Doing without `unidecode`
