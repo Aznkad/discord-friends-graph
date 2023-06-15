@@ -11,7 +11,7 @@ This script is based on the [`discord.py-self`](https://github.com/dolfies/disco
 
 ```bash
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate # or .\venv\Scripts\activate for Windows
 pip install -r requirements.txt
 ```
 
