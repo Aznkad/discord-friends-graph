@@ -9,13 +9,23 @@ This script is based on the [`discord.py-self`](https://github.com/dolfies/disco
 
 ### Setup
 
+This script requires you to be able to run `python 3.8` or higher, and that you have installed two libraries on your computer :
+- `discord.py-self`: The installation details can be found on the [github page](https://github.com/dolfies/discord.py-self). If you're already using `discord.py` you might need to install this library in a virtual environment in order for those not to conflict, but again, all details are given in the github page.
+- `unidecode`: This is used to normalize discord accounts name, which may contain accents, emojis, and special characters. Those may compromise the rendering of the graph at the end. If you want however you can do without by changing a few lines (see below)
+
+This can be achieved by executing the following lines.
+
 ```bash
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-To generate the graph :
+### Launching the script
+Once those libraries are installed, you need to find your discord user token. On June 15th, 2023 [this tutorial](https://www.androidauthority.com/get-discord-token-3149920/) works quite well.
+
+**Warning!** Do not share this token with *anyone*, since this would allow them to have entire control of your discord account. Then, you can write in your command line one of the following two commands (by replacing `token` with your actual token)
+
 ```bash
 python friends_graph.py *token*
 ```
@@ -24,16 +34,8 @@ or
 python friends_graph.py *token* --output *output_file*
 ```
 
-### Dependencies
-This script requires you to be able to run `python 3.8` or higher, and that you have installed two libraries on your computer :
-- `discord.py-self`: The installation details can be found on the [github page](https://github.com/dolfies/discord.py-self). If you're already using `discord.py` you might need to install this library in a virtual environment in order for those not to conflict, but again, all details are given in the github page.
-- `unidecode`: This is used to normalize discord accounts name, which may contain accents, emojis, and special characters. Those may compromise the rendering of the graph at the end. If you want however you can do without by changing a few lines (see below)
+It should print a line each time it is treating a new friend and warn you when it is done. Don't worry if discord's API limits your number of querries.
 
-### Launching the script
-Once those libraries are installed, you need to find your discord user token. On June 15th, 2023 [this tutorial](https://www.androidauthority.com/get-discord-token-3149920/) works quite well.
-**Warning!** Do not share this token with *anyone*, since this would allow them to have entire control of your discord account. Once you found it, you can replace `token` at the end of the script by your discord token.
-
-Finally, you're ready to launch the script! Run it as any normal python script. It should print a line each time it is treating a new friend and warn you when it is done. Don't worry if discord's API limits your number of querries.
 
 ### Rendering the graph
 Executing the code will produce two documents : `graph.dot` and `friends.txt`. 
