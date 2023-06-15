@@ -10,7 +10,7 @@ This script is based on the [`discord.py-self`](https://github.com/dolfies/disco
 ### Dependencies
 This script requires you to be able to run `python 3.8` or higher, and that you have installed two libraries on your computer :
 - `discord.py-self`: The installation details can be found on the [github page](https://github.com/dolfies/discord.py-self). If you're already using `discord.py` you might need to install this library in a virtual environment in order for those not to conflict, but again, all details are given in the github page.
-- `unidecode`: This is used to normalize discord accounts name, which may contain accents, emojis, and special characters. Those may compromise the rendering of the graph at the end. If you want however you can do without by changing a few lines (see ...)
+- `unidecode`: This is used to normalize discord accounts name, which may contain accents, emojis, and special characters. Those may compromise the rendering of the graph at the end. If you want however you can do without by changing a few lines (see below)
 
 ### Launching the script
 Once those libraries are installed, you need to find your discord user token. On June 15th, 2023 [this tutorial](https://www.androidauthority.com/get-discord-token-3149920/) works quite well.
