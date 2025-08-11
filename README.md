@@ -1,5 +1,5 @@
 # discord-friends-graph
-This is a script for a discord self-bot intended to create your discord friends graph, i.e. the set of your discord friends linked together if they are also friends !
+This is a script for a discord self-bot intended to create your discord friends graph, that is the set of your discord friends linked together if they are also friends !
 
 This script is based on the [`discord.py-self`](https://github.com/dolfies/discord.py-self) library. Thanks dolfies!
 
@@ -22,30 +22,35 @@ pip install -r requirements.txt
 ```
 
 ### Launching the script
-Once those libraries are installed, you need to find your discord user token. On June 15th, 2023 [this tutorial](https://www.androidauthority.com/get-discord-token-3149920/) works quite well.
+Once those libraries are installed, you need to find your discord user token. On August 11th, 2025 [this tutorial](https://www.androidauthority.com/get-discord-token-3149920/) works quite well.
 
 **Warning!** Do not share this token with *anyone*, since this would allow them to have entire control of your discord account. Then, you can write in your command line one of the following two commands (by replacing `token` with your actual token)
 
 ```bash
-python friends_graph.py *token*
+python friends.py [-t|--token] *token*
 ```
 or
 ```bash
-python friends_graph.py *token* --output *output_file*
+python friends.py [-t|--token] *token* --output *output_file*
 ```
 
-It should print a line each time it is treating a new friend and warn you when it is done. Don't worry if discord's API limits your number of querries.
+It should print a line each time it is treating a new friend and warn you when it is done.
+
+If you already used the script to generate a file containing all the useful data, you can use it to generate the graphs again without reusing the self-bot via the command:
+
+``` bash
+python friends.py [-i|--input] *input_file*
+```
 
 
 ### Rendering the graph
-Executing the code will produce two documents : `graph.dot` and `friends.txt`. 
-- `graph.dot` is the `dot` file of your friends graph. You can render it using the [dot](https://linux.die.net/man/1/dot) or [neato](https://linux.die.net/man/1/neato) command on linux, or using [`graphviz`](https://graphviz.org/).
+Executing the code will produce one file, `friends.txt` (unless specified otherwise), and a folder `./dots/`. 
 - `friends.txt` is a text file containing the text description of the graph with a neighborhood representation, in case you would want to do things with it without executing the script a second time.
+- `./dots/` contains the `dot` representation of two graphs: the normal one, and another with a clustering of your discord friends using the [louvain method](https://en.wikipedia.org/wiki/Louvain_method). On linux, you can render it using the bash script `render_graphs.sh` which will provide the results in a generated `./graphs/` directory. On linux and windows, you can also use [`graphviz`](https://graphviz.org/).
 
-**Warning!** Those files will overwrite any other file named `graph.dot` and `friends.txt`. Change the names of your files if you don't want to lose your data.
+**Warning!** Those files will overwrite any other file named identically. Change the names of your files if you don't want to lose your data.
 
-### Doing without `unidecode`
-You can get rid of the `unidecode` library by removing the import line, the `normalize` function, and any occurrence of it in the script.
+
 
 ## Potential errors
 
