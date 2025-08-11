@@ -1,2 +1,3 @@
 discord.py-self
 Unidecode
+networkx
